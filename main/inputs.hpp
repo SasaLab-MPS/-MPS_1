@@ -54,18 +54,17 @@ using namespace std;
 #define DIRICHLET_BOUNDARY_IS_CHECKED 2
 
 /* 配列宣言 */
-extern vector<int> aa;
 extern double Acceleration[3 * ARRAY_SIZE];
-int ParticleType[ARRAY_SIZE];
-double Position[3 * ARRAY_SIZE];
-double Velocity[3 * ARRAY_SIZE];
-double Pressure[ARRAY_SIZE];
-double NumberDensity[ARRAY_SIZE];
-int BoundaryCondition[ARRAY_SIZE];
-double SourceTerm[ARRAY_SIZE];
-int FlagForCheckingBoundaryCondition[ARRAY_SIZE];
-double CoefficientMatrix[ARRAY_SIZE * ARRAY_SIZE];
-double MinimumPressure[ARRAY_SIZE];
+extern int ParticleType[ARRAY_SIZE];
+extern double Position[3 * ARRAY_SIZE];
+extern double Velocity[3 * ARRAY_SIZE];
+extern double Pressure[ARRAY_SIZE];
+extern double NumberDensity[ARRAY_SIZE];
+extern int BoundaryCondition[ARRAY_SIZE];
+extern double SourceTerm[ARRAY_SIZE];
+extern int FlagForCheckingBoundaryCondition[ARRAY_SIZE];
+extern double CoefficientMatrix[ARRAY_SIZE * ARRAY_SIZE];
+extern double MinimumPressure[ARRAY_SIZE];
 
 /* 変数定義 */
 extern int FileNumber;
