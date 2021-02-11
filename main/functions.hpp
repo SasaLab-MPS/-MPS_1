@@ -4,6 +4,9 @@
   粒子法プログラムの関数定義ファイル
   Last update: Feb 10, 2021
 =======================================================================*/
+//#include "functions.hpp"
+#ifndef FUNCTIONS_HPP_20210211_202753_
+#define FUNCTIONS_HPP_20210211_202753_
 
 void initializeParticlePositionAndVelocity_for2dim(void);   // t = 0sでの粒子の速度と位置を決定
 void initializeParticlePositionAndVelocity_for3dim(void);
@@ -31,3 +34,4 @@ void moveParticleUsingPressureGradient(void);
 void writeData_inProfFormat(void);
 void writeData_inVtuFormat(void);
 
+#endif FUNCTIONS_HPP_20210211_202753_

@@ -4,6 +4,9 @@
   粒子法プログラムの定数定義ファイル
   Last update: Feb 10, 2021
 =======================================================================*/
+//#include "inputs.hpp"
+#ifndef INPUTS_HPP_20210211_200210_
+#define INPUTS_HPP_20210211_200210_
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -50,26 +53,32 @@ using namespace std;
 #define DIRICHLET_BOUNDARY_IS_CONNECTED 1
 #define DIRICHLET_BOUNDARY_IS_CHECKED 2
 
-static double Acceleration[3 * ARRAY_SIZE];
-static int ParticleType[ARRAY_SIZE];
-static double Position[3 * ARRAY_SIZE];
-static double Velocity[3 * ARRAY_SIZE];
-static double Pressure[ARRAY_SIZE];
-static double NumberDensity[ARRAY_SIZE];
-static int BoundaryCondition[ARRAY_SIZE];
-static double SourceTerm[ARRAY_SIZE];
-static int FlagForCheckingBoundaryCondition[ARRAY_SIZE];
-static double CoefficientMatrix[ARRAY_SIZE * ARRAY_SIZE];
-static double MinimumPressure[ARRAY_SIZE];
-int FileNumber;
-double Time;
-int NumberOfParticles;
-double Re_forNumberDensity, Re2_forNumberDensity;
-double Re_forGradient, Re2_forGradient;
-double Re_forLaplacian, Re2_forLaplacian;
-double N0_forNumberDensity;
-double N0_forGradient;
-double N0_forLaplacian;
-double Lambda;
-double collisionDistance, collisionDistance2;
-double FluidDensity;
+/* 配列宣言 */
+extern vector<int> aa;
+extern double Acceleration[3 * ARRAY_SIZE];
+int ParticleType[ARRAY_SIZE];
+double Position[3 * ARRAY_SIZE];
+double Velocity[3 * ARRAY_SIZE];
+double Pressure[ARRAY_SIZE];
+double NumberDensity[ARRAY_SIZE];
+int BoundaryCondition[ARRAY_SIZE];
+double SourceTerm[ARRAY_SIZE];
+int FlagForCheckingBoundaryCondition[ARRAY_SIZE];
+double CoefficientMatrix[ARRAY_SIZE * ARRAY_SIZE];
+double MinimumPressure[ARRAY_SIZE];
+
+/* 変数定義 */
+extern int FileNumber;
+extern double Time;
+extern int NumberOfParticles;
+extern double Re_forNumberDensity, Re2_forNumberDensity;
+extern double Re_forGradient, Re2_forGradient;
+extern double Re_forLaplacian, Re2_forLaplacian;
+extern double N0_forNumberDensity;
+extern double N0_forGradient;
+extern double N0_forLaplacian;
+extern double Lambda;
+extern double collisionDistance, collisionDistance2;
+extern double FluidDensity;
+
+#endif INPUTS_HPP_20210211_200210_
