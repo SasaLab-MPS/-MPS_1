@@ -5,9 +5,7 @@
   Last update: Feb 10, 2021
 =======================================================================*/
 
-#include "constants.hpp"
-
-void initializeParticlePositionAndVelocity_for2dim(void);
+void initializeParticlePositionAndVelocity_for2dim(void);   // t = 0sでの粒子の速度と位置を決定
 void initializeParticlePositionAndVelocity_for3dim(void);
 void calConstantParameter(void);
 void calNZeroAndLambda(void);
@@ -33,26 +31,3 @@ void moveParticleUsingPressureGradient(void);
 void writeData_inProfFormat(void);
 void writeData_inVtuFormat(void);
 
-static double Acceleration[3 * ARRAY_SIZE];
-static int ParticleType[ARRAY_SIZE];
-static double Position[3 * ARRAY_SIZE];
-static double Velocity[3 * ARRAY_SIZE];
-static double Pressure[ARRAY_SIZE];
-static double NumberDensity[ARRAY_SIZE];
-static int BoundaryCondition[ARRAY_SIZE];
-static double SourceTerm[ARRAY_SIZE];
-static int FlagForCheckingBoundaryCondition[ARRAY_SIZE];
-static double CoefficientMatrix[ARRAY_SIZE * ARRAY_SIZE];
-static double MinimumPressure[ARRAY_SIZE];
-int FileNumber;
-double Time;
-int NumberOfParticles;
-double Re_forNumberDensity, Re2_forNumberDensity;
-double Re_forGradient, Re2_forGradient;
-double Re_forLaplacian, Re2_forLaplacian;
-double N0_forNumberDensity;
-double N0_forGradient;
-double N0_forLaplacian;
-double Lambda;
-double collisionDistance, collisionDistance2;
-double FluidDensity;

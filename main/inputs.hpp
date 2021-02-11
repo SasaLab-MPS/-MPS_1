@@ -35,17 +35,41 @@ using namespace std;
 #define THRESHOLD_RATIO_OF_NUMBER_DENSITY 0.97
 #define COEFFICIENT_OF_RESTITUTION 0.2
 #define COMPRESSIBILITY (0.45E-9)
-#define EPS (0.01 * PARTICLE_DISTANCE)
+#define EPS (0.01 * PARTICLE_DISTANCE)  //　粒子間隔の100分の1を誤差の判定に利用
 #define ON 1
 #define OFF 0
 #define RELAXATION_COEFFICIENT_FOR_PRESSURE 0.2
-#define GHOST -1
-#define FLUID 0
-#define WALL 2
-#define DUMMY_WALL 3
+#define GHOST -1         // 計算に関与しない粒子
+#define FLUID 0          // 流体粒子
+#define WALL 2           // (圧力は計算せず，粒子数密度の計算は行う)壁粒子
+#define DUMMY_WALL 3     // 
 #define GHOST_OR_DUMMY -1
-#define SURFACE_PARTICLE 1
+#define SURFACE_PARTICLE 1 // (圧力を計算する)壁粒子
 #define INNER_PARTICLE 0
 #define DIRICHLET_BOUNDARY_IS_NOT_CONNECTED 0
 #define DIRICHLET_BOUNDARY_IS_CONNECTED 1
 #define DIRICHLET_BOUNDARY_IS_CHECKED 2
+
+static double Acceleration[3 * ARRAY_SIZE];
+static int ParticleType[ARRAY_SIZE];
+static double Position[3 * ARRAY_SIZE];
+static double Velocity[3 * ARRAY_SIZE];
+static double Pressure[ARRAY_SIZE];
+static double NumberDensity[ARRAY_SIZE];
+static int BoundaryCondition[ARRAY_SIZE];
+static double SourceTerm[ARRAY_SIZE];
+static int FlagForCheckingBoundaryCondition[ARRAY_SIZE];
+static double CoefficientMatrix[ARRAY_SIZE * ARRAY_SIZE];
+static double MinimumPressure[ARRAY_SIZE];
+int FileNumber;
+double Time;
+int NumberOfParticles;
+double Re_forNumberDensity, Re2_forNumberDensity;
+double Re_forGradient, Re2_forGradient;
+double Re_forLaplacian, Re2_forLaplacian;
+double N0_forNumberDensity;
+double N0_forGradient;
+double N0_forLaplacian;
+double Lambda;
+double collisionDistance, collisionDistance2;
+double FluidDensity;
