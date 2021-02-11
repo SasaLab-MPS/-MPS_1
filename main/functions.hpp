@@ -18,8 +18,8 @@ void calGravity(void);                      // NS方程式右辺第三項を計�
 void calViscosity(void);                    // NS方程式右辺第二項を計算，粘性による粒子の加速を計算
 void moveParticle(void);                    // 粒子の移動を計算
 void collision(void);
-void calPressure(void);
-void calNumberDensity(void);
+void calPressure(void);                     // 圧力を計算(陰解法)
+void calNumberDensity(void);                
 void setBoundaryCondition(void);
 void setSourceTerm(void);
 void setMatrix(void);
