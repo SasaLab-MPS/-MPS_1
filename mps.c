@@ -173,7 +173,6 @@ void initializeParticlePositionAndVelocity_for2dim( void ){
   for(i=0;i<NumberOfParticles*3;i++) { Velocity[i]=0.0; }
 }
 
-
 void initializeParticlePositionAndVelocity_for3dim( void ){
   int iX, iY, iZ;
   int nX, nY, nZ;

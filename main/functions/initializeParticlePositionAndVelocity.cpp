@@ -1,16 +1,12 @@
 /*=====================================================================
-  functions.hpp   
+  initializeParticlePositionAndVelocity.cpp   
   Yota INOUE (2021) 
   関数実装ファイル 
-  粒子の位置と速度の初期化
+  粒子の位置と速度の初期化する関数
   Last update: Feb 10, 2021
 =======================================================================*/
-//#include "functions.hpp"
-#ifndef FUNCTIONS_HPP_20210211_202753_
-#define FUNCTIONS_HPP_20210211_202753_
-
 #include "inputs.hpp"
-#include "functions.hpp"
+#include "../functions.hpp"
 
 void initializeParticlePositionAndVelocity_for2dim(void)
 {
@@ -153,5 +149,3 @@ void initializeParticlePositionAndVelocity_for3dim(void)
         Velocity[i] = 0.0;
     }
 }
-
-#endif FUNCTIONS_HPP_20210211_202753_
