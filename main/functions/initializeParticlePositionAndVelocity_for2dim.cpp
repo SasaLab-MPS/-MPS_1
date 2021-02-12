@@ -8,6 +8,18 @@
 #include "../inputs.hpp"
 #include "../functions.hpp"
 
+double Acceleration[3 * ARRAY_SIZE];                // 加速度
+int ParticleType[ARRAY_SIZE];                       // 粒子のタイプ
+double Position[3 * ARRAY_SIZE];                    // 位置
+double Velocity[3 * ARRAY_SIZE];                    // 速度
+double Pressure[ARRAY_SIZE];                        // 圧力
+double NumberDensity[ARRAY_SIZE];                   // 粒子密度
+int BoundaryCondition[ARRAY_SIZE];                  // 境界条件
+double SourceTerm[ARRAY_SIZE];                      // ソースターム行列
+int FlagForCheckingBoundaryCondition[ARRAY_SIZE];
+double CoefficientMatrix[ARRAY_SIZE * ARRAY_SIZE];  // 係数行列A
+double MinimumPressure[ARRAY_SIZE];                 // ある粒子近傍の最小圧力
+
 void initializeParticlePositionAndVelocity_for2dim(void)
 {
     int iX, iY;
