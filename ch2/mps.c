@@ -186,10 +186,10 @@ void initializeParticlePositionAndVelocity_for3dim( void ){
   for(iX= -4;iX<nX;iX++){
     for(iY= -4;iY<nY;iY++){
       for(iZ= -4;iZ<nZ;iZ++){
-	x = PARTICLE_DISTANCE * iX;
-	y = PARTICLE_DISTANCE * iY;
-	z = PARTICLE_DISTANCE * iZ;
-	flagOfParticleGeneration = OFF;
+	      x = PARTICLE_DISTANCE * iX;
+	      y = PARTICLE_DISTANCE * iY;
+	      z = PARTICLE_DISTANCE * iZ;
+	      flagOfParticleGeneration = OFF;
 
 	/* dummy wall region */
 	if( (((x>-4.0*PARTICLE_DISTANCE+EPS)&&(x<=1.00+4.0*PARTICLE_DISTANCE+EPS))&&( (y>0.0-4.0*PARTICLE_DISTANCE+EPS )&&(y<=0.6+EPS)))&&( (z>0.0-4.0*PARTICLE_DISTANCE+EPS)&&(z<=0.3+4.0*PARTICLE_DISTANCE+EPS ))){  
@@ -272,16 +272,16 @@ void calNZeroAndLambda( void ){
   for(iX= -4;iX<5;iX++){
     for(iY= -4;iY<5;iY++){
       for(iZ= iZ_start;iZ<iZ_end;iZ++){
-	if( ((iX==0)&&(iY==0)) && (iZ==0) )continue;
-	xj = PARTICLE_DISTANCE * (double)(iX);
-	yj = PARTICLE_DISTANCE * (double)(iY);
-	zj = PARTICLE_DISTANCE * (double)(iZ);
-	distance2 = (xj-xi)*(xj-xi)+(yj-yi)*(yj-yi)+(zj-zi)*(zj-zi);
-	distance = sqrt(distance2);
-	N0_forNumberDensity += weight(distance, Re_forNumberDensity);
-	N0_forGradient      += weight(distance, Re_forGradient);
-	N0_forLaplacian     += weight(distance, Re_forLaplacian);
-	Lambda              += distance2 * weight(distance, Re_forLaplacian);
+	      if( ((iX==0)&&(iY==0)) && (iZ==0) )continue;
+	      xj = PARTICLE_DISTANCE * (double)(iX);
+	      yj = PARTICLE_DISTANCE * (double)(iY);
+	      zj = PARTICLE_DISTANCE * (double)(iZ);
+	      distance2 = (xj-xi)*(xj-xi)+(yj-yi)*(yj-yi)+(zj-zi)*(zj-zi);
+	      distance = sqrt(distance2);
+	      N0_forNumberDensity += weight(distance, Re_forNumberDensity);
+	      N0_forGradient      += weight(distance, Re_forGradient);
+	      N0_forLaplacian     += weight(distance, Re_forLaplacian);
+	      Lambda              += distance2 * weight(distance, Re_forLaplacian);
       }
     }
   }
