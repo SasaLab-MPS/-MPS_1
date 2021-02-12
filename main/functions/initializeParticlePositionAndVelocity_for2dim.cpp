@@ -20,6 +20,19 @@ int FlagForCheckingBoundaryCondition[ARRAY_SIZE];
 double CoefficientMatrix[ARRAY_SIZE * ARRAY_SIZE];  // 係数行列A
 double MinimumPressure[ARRAY_SIZE];                 // ある粒子近傍の最小圧力
 
+int FileNumber;
+double Time;
+int NumberOfParticles; // 全粒子数
+double Re_forNumberDensity, Re2_forNumberDensity;
+double Re_forGradient, Re2_forGradient;
+double Re_forLaplacian, Re2_forLaplacian;
+double N0_forNumberDensity; // 粒子数密度
+double N0_forGradient;
+double N0_forLaplacian;
+double Lambda;
+double collisionDistance, collisionDistance2;
+double FluidDensity;
+
 void initializeParticlePositionAndVelocity_for2dim(void)
 {
     int iX, iY;
