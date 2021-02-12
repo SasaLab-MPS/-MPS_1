@@ -55,17 +55,17 @@ using namespace std;
 #define DIRICHLET_BOUNDARY_IS_CHECKED 2
 
 /* 配列宣言 */
-extern double Acceleration[3 * ARRAY_SIZE];
-extern int ParticleType[ARRAY_SIZE];
-extern double Position[3 * ARRAY_SIZE];
-extern double Velocity[3 * ARRAY_SIZE];
-extern double Pressure[ARRAY_SIZE];
-extern double NumberDensity[ARRAY_SIZE];
-extern int BoundaryCondition[ARRAY_SIZE];
-extern double SourceTerm[ARRAY_SIZE];
+extern double Acceleration[3 * ARRAY_SIZE];                 // 加速度
+extern int ParticleType[ARRAY_SIZE];                        // 粒子のタイプ
+extern double Position[3 * ARRAY_SIZE];                     // 位置
+extern double Velocity[3 * ARRAY_SIZE];                     // 速度
+extern double Pressure[ARRAY_SIZE];                         // 圧力
+extern double NumberDensity[ARRAY_SIZE];                    // 粒子密度
+extern int BoundaryCondition[ARRAY_SIZE];                   // 境界条件
+extern double SourceTerm[ARRAY_SIZE];                       // ソースターム行列
 extern int FlagForCheckingBoundaryCondition[ARRAY_SIZE];
-extern double CoefficientMatrix[ARRAY_SIZE * ARRAY_SIZE];
-extern double MinimumPressure[ARRAY_SIZE];
+extern double CoefficientMatrix[ARRAY_SIZE * ARRAY_SIZE];   // 係数行列A
+extern double MinimumPressure[ARRAY_SIZE];                  // ある粒子近傍での最低圧力
 
 /* 変数定義 */
 extern int FileNumber;
