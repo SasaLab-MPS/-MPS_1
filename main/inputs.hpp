@@ -81,4 +81,4 @@ extern double Lambda;
 extern double collisionDistance, collisionDistance2;
 extern double FluidDensity;
 
-#endif INPUTS_HPP_20210211_200210_
+#endif // INPUTS_HPP_20210211_200210_
