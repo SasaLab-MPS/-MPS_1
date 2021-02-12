@@ -39,10 +39,10 @@ using namespace std;
 #define THRESHOLD_RATIO_OF_NUMBER_DENSITY 0.97
 #define COEFFICIENT_OF_RESTITUTION 0.2
 #define COMPRESSIBILITY (0.45E-9)
-#define EPS (0.01 * PARTICLE_DISTANCE)  //　粒子間隔の100分の1を誤差の判定に利用
+#define EPS (0.01 * PARTICLE_DISTANCE)  // 粒子間隔の100分の1を誤差の判定に利用
 #define ON 1
 #define OFF 0
-#define RELAXATION_COEFFICIENT_FOR_PRESSURE 0.2
+#define RELAXATION_COEFFICIENT_FOR_PRESSURE 0.2     // 計算を安定させるための緩和係数
 #define GHOST -1            // 計算に関与しない粒子
 #define FLUID 0             // 流体粒子
 #define WALL 2              // (圧力は計算せず，粒子数密度の計算は行う)壁粒子

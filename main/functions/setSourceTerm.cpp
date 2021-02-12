@@ -2,7 +2,7 @@
   setSourceTerm.cpp   
   Yota INOUE (2021) 
   関数実装ファイル 
-  ポアソン方程式のディリクレ境界条件を設定(圧力の固定をするかしないかを設定)
+  圧力に関する連立一次方程式のソースタームを設定
   Last update: Feb 11, 2021
 =======================================================================*/
 #include "inputs.hpp"
@@ -12,7 +12,7 @@ void setSourceTerm(void)
 {
     int i;
     double n0 = N0_forNumberDensity;
-    double gamma = RELAXATION_COEFFICIENT_FOR_PRESSURE;
+    double gamma = RELAXATION_COEFFICIENT_FOR_PRESSURE;     // 計算を安定させるための緩和係数(0.2としている)
 
     for (i = 0; i < NumberOfParticles; i++)
     {
