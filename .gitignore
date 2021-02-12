@@ -1,3 +1,6 @@
 
 .vscode/c_cpp_properties.json
 mps.exe
+ch2/makefile
+*.prof
+*.vtu
