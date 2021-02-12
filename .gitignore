@@ -6,3 +6,4 @@ ch2/makefile
 *.vtu
 *.o
 *.gch
+*.exe
