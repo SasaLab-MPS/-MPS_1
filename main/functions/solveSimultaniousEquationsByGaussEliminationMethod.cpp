@@ -15,10 +15,13 @@ void solveSimultaniousEquationsByGaussEliminationMethod(void)
     double sumOfTerms;
     int n = NumberOfParticles;
 
+    // 圧力を0 Paで初期化
     for (i = 0; i < n; i++)
     {
         Pressure[i] = 0.0;
     }
+
+    // 前進消去
     for (i = 0; i < n - 1; i++)
     {
         if (BoundaryCondition[i] != INNER_PARTICLE)
@@ -35,6 +38,8 @@ void solveSimultaniousEquationsByGaussEliminationMethod(void)
             SourceTerm[j] -= c * SourceTerm[i];
         }
     }
+
+    // 後退代入
     for (i = n - 1; i >= 0; i--)
     {
         if (BoundaryCondition[i] != INNER_PARTICLE)
@@ -42,7 +47,7 @@ void solveSimultaniousEquationsByGaussEliminationMethod(void)
         sumOfTerms = 0.0;
         for (j = i + 1; j < n; j++)
         {
-            if (BoundaryCondition[j] == GHOST_OR_DUMMY)
+            if (BoundaryCondition[j] == GHOST_OR_DUMMY)     // 自由表面での圧力計算を省略(自由表面では圧力が既知のため)
                 continue;
             sumOfTerms += CoefficientMatrix[i * n + j] * Pressure[j];
         }
