@@ -43,12 +43,12 @@ using namespace std;
 #define ON 1
 #define OFF 0
 #define RELAXATION_COEFFICIENT_FOR_PRESSURE 0.2
-#define GHOST -1         // 計算に関与しない粒子
-#define FLUID 0          // 流体粒子
-#define WALL 2           // (圧力は計算せず，粒子数密度の計算は行う)壁粒子
-#define DUMMY_WALL 3     // 
-#define GHOST_OR_DUMMY -1
-#define SURFACE_PARTICLE 1 // (圧力を計算する)壁粒子
+#define GHOST -1            // 計算に関与しない粒子
+#define FLUID 0             // 流体粒子
+#define WALL 2              // (圧力は計算せず，粒子数密度の計算は行う)壁粒子
+#define DUMMY_WALL 3        // 
+#define GHOST_OR_DUMMY -1   // ポアソン方程式の計算時に用いる 
+#define SURFACE_PARTICLE 1  // (圧力を計算する)壁粒子
 #define INNER_PARTICLE 0
 #define DIRICHLET_BOUNDARY_IS_NOT_CONNECTED 0
 #define DIRICHLET_BOUNDARY_IS_CONNECTED 1
@@ -70,7 +70,7 @@ extern double MinimumPressure[ARRAY_SIZE];
 /* 変数定義 */
 extern int FileNumber;
 extern double Time;
-extern int NumberOfParticles;
+extern int NumberOfParticles;         // 全粒子数
 extern double Re_forNumberDensity, Re2_forNumberDensity;
 extern double Re_forGradient, Re2_forGradient;
 extern double Re_forLaplacian, Re2_forLaplacian;

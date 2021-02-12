@@ -24,11 +24,13 @@ void calNumberDensity(void)
         {
             if ((j == i) || (ParticleType[j] == GHOST))
                 continue;
+            // 粒子間距離の計算
             xij = Position[j * 3] - Position[i * 3];
             yij = Position[j * 3 + 1] - Position[i * 3 + 1];
             zij = Position[j * 3 + 2] - Position[i * 3 + 2];
             distance2 = (xij * xij) + (yij * yij) + (zij * zij);
             distance = sqrt(distance2);
+            // 重み関数の計算
             w = weight(distance, Re_forNumberDensity);
             NumberDensity[i] += w;
         }
