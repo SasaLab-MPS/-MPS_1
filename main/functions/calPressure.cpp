@@ -5,7 +5,7 @@
   圧力を計算(陰解法)
   Last update: Feb 12, 2021
 =======================================================================*/
-#include "inputs.hpp"
+#include "../inputs.hpp"
 #include "../functions.hpp"
 
 void calPressure(void)

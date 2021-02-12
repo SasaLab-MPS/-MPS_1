@@ -1,12 +1,12 @@
 PROGRAM = main
-OBJS = headerfiles/array.o headerfiles/dist.o headerfiles/func.o
-CC = gcc
+OBJS = functions/array.o functions/dist.o functions/func.o
+CC = g++
 CFLAGS = -O2
 
 $(PROGRAM): $(PROGRAM).o $(OBJS)
    $(CC) -o $(PROGRAM) $(PROGRAM).o $(OBJS) -lm
 
-$(OBJS) $(PROGRAM).o: header.h
+$(OBJS) $(PROGRAM).o: functions.hpp
 
 clean:
    rm -f *.o headerfiles/*.o

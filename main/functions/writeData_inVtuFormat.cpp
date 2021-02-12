@@ -5,7 +5,7 @@
   計算結果をファイル出力(ParaViewのvtuファイル形式)
   Last update: Feb 12, 2021
 =======================================================================*/
-#include "inputs.hpp"
+#include "../inputs.hpp"
 #include "../functions.hpp"
 
 void writeData_inVtuFormat(void)

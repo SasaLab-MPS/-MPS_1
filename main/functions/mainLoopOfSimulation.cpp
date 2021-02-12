@@ -5,7 +5,7 @@
   シミュレーションメインループ
   Last update: Feb 11, 2021
 =======================================================================*/
-#include "inputs.hpp"
+#include "../inputs.hpp"
 #include "../functions.hpp"
 
 void mainLoopOfSimulation(void)

@@ -5,7 +5,7 @@
   ポアソン方程式のディリクレ境界条件を設定(圧力の固定をするかしないかを設定)
   Last update: Feb 11, 2021
 =======================================================================*/
-#include "inputs.hpp"
+#include "../inputs.hpp"
 #include "../functions.hpp"
 
 void setBoundaryCondition(void)

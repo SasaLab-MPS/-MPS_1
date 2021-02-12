@@ -5,7 +5,7 @@
   粒子の移動を計算
   Last update: Feb 11, 2021
 =======================================================================*/
-#include "inputs.hpp"
+#include "../inputs.hpp"
 #include "../functions.hpp"
 
 void moveParticle(void)

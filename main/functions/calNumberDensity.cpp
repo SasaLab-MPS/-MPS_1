@@ -5,7 +5,7 @@
   粒子数密度を計算
   Last update: Feb 12, 2021
 =======================================================================*/
-#include "inputs.hpp"
+#include "../inputs.hpp"
 #include "../functions.hpp"
 
 void calNumberDensity(void)

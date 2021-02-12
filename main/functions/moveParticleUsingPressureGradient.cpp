@@ -5,7 +5,7 @@
   各粒子近傍で最小の圧力を計算し記録
   Last update: Feb 12, 2021
 =======================================================================*/
-#include "inputs.hpp"
+#include "../inputs.hpp"
 #include "../functions.hpp"
 
 void moveParticleUsingPressureGradient(void)
