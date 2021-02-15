@@ -38,6 +38,7 @@ int main(int argc, char** argv){
 	Position = (float*)malloc(sizeof(float)*nxyz*3);
 	int NumberOfParticle = 0;
 
+	// バケット構築
 	for(int iz=0;iz<nz;iz++){
 	for(int iy=0;iy<ny;iy++){
 	for(int ix=0;ix<nx;ix++){
