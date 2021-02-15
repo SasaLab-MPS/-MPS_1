@@ -4,6 +4,7 @@
 #define INPUTS_HPP_20210215_160210_
 
 #include <bits/stdc++.h>
+#include <sys/time.h>
 using namespace std;
 
 /* 変数定義 */
