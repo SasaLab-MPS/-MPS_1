@@ -4,3 +4,6 @@ mps.exe
 ch2/makefile
 *.prof
 *.vtu
+*.o
+*.gch
+*.exe

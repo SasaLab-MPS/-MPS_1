@@ -1,12 +1,22 @@
-PROGRAM = main
-OBJS = functions/initializeParticlePositionAndVelocity_for2dim.o functions/initializeParticlePositionAndVelocity_for3dim.o functions/calConstantParameter.o
+# http://nao-bamboo.hatenablog.com/entry/2015/09/11/175832
+PROGNAME := main
+# INCDIR := include
+# SRCDIR := src
+LIBDIR := functions
+HEADER = functions.hpp inputs.hpp
+# OUTDIR := build
+# TARGET := $(OUTDIR)/$(PROGNAME)
+# SRCS := $(wildcard $(SRCDIR)/*.c) $(wildcard $(SRCDIR)/$(LIBDIR)/*.c)
+# OBJS := $(addprefix $(OUTDIR)/,$(patsubst %.c,%.o,$(SRCS)))
+OBJS := $(wildcard $(LIBDIR)/*.o)
+#$(warning $(OBJS))
+
 CC = g++
-CFLAGS = -O2
+CFLAGS = -Wall -O2
 
-$(PROGRAM): $(PROGRAM).o $(OBJS)
-   $(CC) -o $(PROGRAM) $(PROGRAM).o $(OBJS) -lm
+$(PROGNAME): $(PROGNAME).cpp
+	$(CC) $(CFLAGS) -o $@ $^ $(OBJS) $(HEADER)
 
-$(OBJS) $(PROGRAM).o: functions.hpp inputs.hpp
 
 clean:
-   rm -f *.o headerfiles/*.o
+	rm -rf $(OUTDIR)
