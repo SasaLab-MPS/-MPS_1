@@ -14,7 +14,7 @@ typedef vector<double> vec;                 // ベクトル
 
 vec p;      // 探索方向ベクトル
 vec r;      // 残差ベクトル
-vec Ax;     // 行列とベクトルの積，Ab
+vec Ax;     // 行列とベクトルの積，Ax
 vec Ap;     // 行列とベクトルの積，Ap
 
 // n行m列の行列を生成
@@ -34,6 +34,7 @@ void vector_x_matrix(matrix A, vec x, vec y) {
             ans += A[i][j]*x[j];
         }
         y[i] = ans;
+        // printf("call vxm Ax[i] : %lf \n", y[i]);
     }
 } 
 
@@ -66,8 +67,10 @@ void CG_method(matrix A, vec x, vec b) {
     // Axの計算
     vector_x_matrix(A, x, Ax);
 
-    printf("Ax : %lf \n", Ax[0]);
-
+    for(int i = 0; i < Ax.size(); i++) {
+        printf("Ax[i] : %lf \n", Ax[i]);
+    }
+   
     // p, rを計算 p = r = b-Ax
     for(int i = 0; i < b.size(); i++) {
         p[i] = b[i] - Ax[i];
@@ -122,6 +125,7 @@ int main(int argc, char const *argv[])
          {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 5.0, 2.0},
          {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 5.0}};
 
+    printf("size A %d \n", A.size());
     vec b = {3.0, 1.0, 4.0, 0.0, 5.0, -1.0, 6.0, -2.0, 7.0, -15.0};
     // 初期値は適当
     vec x = {1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0};
