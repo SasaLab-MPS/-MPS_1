@@ -7,7 +7,7 @@ using namespace std;
 
 #define N 10
 #define iMAX 100
-#define EPS 1e-8
+#define EPS 1.0e-6
 
 typedef vector<vector<double> > matrix;     // 行列
 typedef vector<double> vec;                 // ベクトル
