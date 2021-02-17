@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include <Eigen/Dense>
+#include <Eigen/Dense>  // Denseにたいていのモジュールが入っている
 using namespace std;
 using namespace Eigen;
 
