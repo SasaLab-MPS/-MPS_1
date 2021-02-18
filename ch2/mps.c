@@ -686,7 +686,7 @@ void setMinimumPressure( void ){
       distance2 = (xij*xij)+(yij*yij)+(zij*zij);
       if(distance2>=Re2_forGradient)continue;
       if( MinimumPressure[i] > Pressure[j] ){
-	MinimumPressure[i] = Pressure[j];
+	        MinimumPressure[i] = Pressure[j];
       }
     }
   }
