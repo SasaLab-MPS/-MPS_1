@@ -644,7 +644,7 @@ void solveSimultaniousEquationsByGaussEliminationMethod( void ){
       if(BoundaryCondition[j]==GHOST_OR_DUMMY) continue;
       c = CoefficientMatrix[j*n+i]/CoefficientMatrix[i*n+i];
       for(k=i+1; k<n; k++){
-	CoefficientMatrix[j*n+k] -= c * CoefficientMatrix[i*n+k];
+	      CoefficientMatrix[j*n+k] -= c * CoefficientMatrix[i*n+k];
       }
       SourceTerm[j] -= c*SourceTerm[i];
     }
